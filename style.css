@@ -108,6 +108,7 @@ body {
 
 .skill-grid {
     display: flex;
+    flex-direction: row;
     gap: 5%;
     margin-bottom: 2%;
 }
