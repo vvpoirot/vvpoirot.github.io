@@ -106,6 +106,12 @@ body {
     border: 2px solid #111; /* petit contour */
 }
 
+.skill-grid {
+    display: flex;
+    gap: 5%;
+    margin-bottom: 2%;
+}
+
 @media (max-width: 768px) {
     .sidebar {
         position: fixed;
