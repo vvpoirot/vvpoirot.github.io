@@ -106,11 +106,13 @@ body {
     border: 2px solid #111; /* petit contour */
 }
 
-.skill-grid {
-    display: flex;
-    flex-direction: row;
-    gap: 5%;
-    margin-bottom: 2%;
+@media (min-width: 768px) {
+    .skill-grid {
+        display: flex;
+        flex-direction: row;
+        gap: 5%;
+        margin-bottom: 2%;
+    }
 }
 
 @media (max-width: 768px) {
