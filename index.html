@@ -14,7 +14,7 @@
     <div class="sidebar">
         <button class="sidebar-button" onclick="showOncePage('home')"><img src="assets/home.png" alt="folder-logo" height="70px" width="70px"></button>
         <button class="sidebar-button" onclick="showOncePage('project1')"><img src="assets/folder.png" alt="folder-logo" height="100px" width="100px">Cursus 42</button>
-        <button class="sidebar-button" onclick="showOncePage('project2')"><img src="assets/folder.png" alt="folder-logo" height="100px" width="100px">Red-Tetris</button>
+        <button class="sidebar-button" onclick="showOncePage('project2')"><img src="assets/folder.png" alt="folder-logo" height="100px" width="100px">Red_Tetris</button>
         <button class="sidebar-button" onclick="showOncePage('project3')"><img src="assets/folder.png" alt="folder-logo" height="100px" width="100px">En cours</button>
     </div>
     <!-- <input type="checkbox" id="sidebar-toggle" hidden>
@@ -173,7 +173,38 @@
         </div>
         
         <div class="main-content" id="project2">
-            <p>Projet en cours...</p>
+			<img src="assets/red_tetris_logo.png" alt="RedTetris_logo" height="70px" width="130px">
+            <h2>Red_Tetris</h2>
+			<p>Le projet Red Tetris consistait à réaliser un Tetris en Web en binôme.<br>
+				Je me suis personnellement occupé de la partie Back du projet. <br>
+				L'objectif de ce projet est de développer un jeu de Tetris multijoueurs en réseau<br>
+				à partir d'une pile logicielle exclusivement Full Stack JavaScript. <br>
+				Ainsi que la réalisation de tests unitaires.</p>
+
+			<h3>Outils utilisés</h3>
+			<p>Le sujet ne demandait pas de persistance de données, donc pas besoin de base de données. <br>
+				Pour le serveur, nous avons choisi Node.JS incrémenté avec le framework Express, <br>
+				on utilisait socket.io pour la communication Server/Client (communication par WebSocket) <br>
+				Et le Router en SPA (Simple-Page-Application) utilisait le framework Vue.</p>
+
+			<h3>Les Règles</h3>
+			<p>Quelques consignes nous étaient données que je vais détailler ci-dessous:</p>
+			<div class="text-img">
+				<p><b>[Multijoueurs]</b>   Nous devions faire en sorte que le jeu se joue seul comme à plusieurs, <br>
+				de la même manière que Tetris 99, avec un système où le dernier joueur encore en liste gagne. <br>
+				Avec une règle disant que si un joueur complète une ou plusieurs lignes<i>(n)</i>, <br>
+				on rajoute <i>n-1</i> lignes indestructibles chez les autres. <br>
+				On devais également afficher l'ombre de la grille des joueurs adverses.</p>
+				<img class="right_txt_img" src="assets/n_lignes.png" alt="added_lignes">
+			</div>
+			<img class="right_txt_img" src="assets/shadow_tetris.png" alt="shadow_tetris">
+			<p><b>[Tests Unitaires]</b>   Les principaux tests que j'ai réalisés consistaient à m'assurer <br>
+				que la communication entre un client et le serveur se fasse correctement et renvoie les bonnes informations au bon moment. <br>
+				Grâce à ces tests j'ai compris et découvert l'utilité des Objets Mock, qui permettent d'imité des clients auprès du serveur.</p>
+			<h3>Conclusion</h3>
+			<p>Le projet m'a permis d'approfondir mes connaissances sur l'utilisation d'un serveur WebSocket et les tests unitaires. <br>
+				Le jeu ainsi que sa logique de programmation étaient sympas à faire mais ce n'était clairement pas le point le plus compliqué du projet. <br>
+				J'ai beaucoup apprécié réaliser ce projet et j'ai acquis des capacités en développement applicatif très utiles.</p>
         </div>
 
         <div class="main-content" id="project3">

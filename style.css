@@ -113,6 +113,17 @@ body {
         gap: 5%;
         margin-bottom: 2%;
     }
+
+	.text-img {
+		display: flex;
+		align-items: flex-start;
+		gap: 15px;
+	}
+
+	.right_txt_img {
+		width: 250px;
+		border-radius: 8px;
+	}
 }
 
 @media (max-width: 768px) {
