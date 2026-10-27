@@ -13,8 +13,8 @@ async function fetchOncePage(idToShow) {
 
 		// Fetch html file and put in the new div
         try {
-            const response = await fetch(`${idToShow}.html`);
-            if (!response.ok) throw new Error(`Not found : ${idToShow}.html`);
+            const response = await fetch(`pages/${idToShow}.html`);
+            if (!response.ok) throw new Error(`Not found : pages/${idToShow}.html`);
             
             const htmlContent = await response.text();
             targetSection.innerHTML = htmlContent;
