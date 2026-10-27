@@ -1,0 +1,72 @@
+<img src="assets/42logo.png" alt="42logo" height="100px" width="240px">
+<h2>Mon cursus à 42</h2>
+<p>Le concept de cette école est de réaliser des projets en totale autonomie sans professeur.<br>
+	Le travail en équipe et l'apprentissage par soi-même sont nécessaires pour avancer dans les projets.<br>
+	Je vais exposer en détail deux de mes projets marquants ci-dessous.</p>
+
+<ul>
+<h2>Philosophers</h2>
+	<p>Connaissez-vous le problème du dîner des philosophes ?</p>
+	<p>Des philosophes sont réunis autour d'une table. Devant chacun, il y a une assiette et une fourchette à côté.</p>
+	<p>Un philosophe demande deux fourchettes pour le repas : celle à gauche et celle à droite.<br>
+		Si un philosophe ne mange pas dans un délai imparti, il décède.<br>
+		Un philosophe doit obligatoirement prendre la fourchette à sa gauche en premier<br>
+		et ne peux pas prendre celle de droite sans la gauche.</p>
+	<img src="assets/philo.png" alt="philo-picture" id="philo-img" height="200px" width="200px">
+	<p>Le but du programme est de reproduire cette situation dans un code en langage C.<br>
+		En argument pour lancer le programme, celui-ci demande 4 valeurs :
+	<ul>
+		~> Nombre de philosophes.<br>
+		~> Temps avant de décéder.<br>
+		~> Temps pour manger.<br>
+		~> Temps pour dormir.<br>
+	</ul></p>
+	<p>Le but du projet était d'utiliser les threads pour pouvoir lancer un processus par philosophe.<br>
+		Quand un processus (un philosophe), arrive dans la fonction pour "manger",<br>
+		il prend la fourchette à sa gauche et à sa droite ce qui fait que le prochain processus ne peux prendre la fourchette à sa gauche.<br>
+		Le philosophe qui ne peux pas prendre une fourchette attend (il pense).<br>
+		Pour bloquer une fourchette, on met en place un mutex qui va empêcher le prochain processus de la prendre.<br>
+		Les fourchettes sont des variables de type 'pthread_mutex_t', qui grâce à une fonction, peuvent être bloquées et empêchent les autres processus d'y accéder.<br>
+		Bien sûr, pendant ce temps-là, le délai avant qu'il décède progresse.</p>
+	<p>Pour vérifier si un philosophe va décéder, il faut calculer le temps depuis son dernier repas<br>
+		et le comparer avec le délai fourni en argument.</p>
+	<p>Pour conclure, ce projet m'a permis d'approfondir mes connaissances en termes de programmation.<br>
+		Le multi-threading est une logique technique et très intéressante.</p>
+
+<br>
+<h2>ft_irc</h2>
+	🙋‍♂️<em>Un serveur IRC (Inter Relay Chat) est un service en ligne qui permet à des utilisateurs<br>
+		de discuter en temps réel via des "salons" ou "canaux" de discussion.</em>
+	<p>L'objectif était de créer un serveur IRC en binôme. <br>
+		Il était demandé d'utiliser le C++ pour le réaliser. <br>
+		L'un des principes d'un serveur IRC, est de ne pas sauvegarder les conversations dans une base de données. <br>
+		Il n'y a aucune persistance dans les messages des utilisateurs. <br>
+		Le serveur doit être protegé par un mot de passe. <br>
+		</p>
+	<p>Pour commencer, nous avons déterminé un client de référence pour utiliser notre serveur, ainsi nous avons choisi <em style="font-weight: bold;">irssi</em>. <br>
+		Les actions possibles sur le serveur sont les mêmes qu'un serveur IRC classique. <br>
+		Le fonctionnement du serveur en plusieurs points :
+		<ul>
+			<li><h3>Connexion d'un client :</h3>
+				<ul>
+					~> Demande du displayname et username de l'utilisateur et le mot de passe du serveur. <br>
+					~> Vérification des informations et de la validité du mot de passe. <br>
+					~> Connexion de l'utilisateur au serveur. <br>
+					~> Les informations sont stockées dans un objet instancié à partir d'une classe. <br>
+				</ul></li>
+			<li><h3>Utilisation :</h3>
+				<ul>
+					~> Créer / rejoindre des canaux de conversation. <br>
+					~> En tant qu'admin du canal : limiter le nombre de membres, le rendre "sur invitation" ou changer le topic. <br>
+					~> Possibilité de parler dans un canal privé entre chaque utilisateur.
+				</ul></li>
+			<li><h3>Déconnexion / Crash :</h3>
+				<ul>
+					~> Déconnexion de l'utilisateur, des canaux encore liés à lui. <br>
+					~> Suppression de l'objet lié à l'utilisateur.
+				</ul></li>
+		</ul>
+	</p>
+	<p>J'ai eu l'occasion de travailler en binôme pendant ce projet. L'organisation était primordiale et nous nous sommes répartis les tâches. <br>
+		Nous nous sommes basés sur des serveurs existants pour comprendre leur fonctionnement.</p>
+</ul>

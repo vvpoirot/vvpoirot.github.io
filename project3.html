@@ -1,0 +1,52 @@
+
+	<h2>ft_malloc</h2>
+
+	<h3>Objectif et limites</h3>
+	<p>L'objectif de ce projet est de recréer le fonctionnement de la fonction malloc en C, qui permet d'allouer dynamiquement de la mémoire à un programme.<br>
+		Cette implémentation repose sur un gestionnaire de mémoire utilisant notamment la fonction mmap pour demander des zones de mémoire au noyau du système d'exploitation.<br>
+		Le projet consiste également à implémenter les fonctions
+		free et realloc, indispensables pour libérer
+		la mémoire allouée et redimensionner les blocs de mémoire existants.
+		L'objectif est ainsi de comprendre et de maîtriser la gestion de la
+		mémoire dynamique, depuis son allocation jusqu'à sa libération.
+	</p>
+	<p>	
+		Bien que cette implémentation soit moins complète et optimisée que celle
+		existante, elle permet d'approfondir des notions essentielles
+		comme la gestion des blocs de mémoire, les
+		interactions avec le noyau et l'utilisation de mmap pour
+		gérer efficacement les ressources mémoire d'un programme.
+	</p>
+
+	<h3>Principe et schéma</h3>
+	<p>
+		Dans un premier temps, chaque demande d'allocation est classée
+		dans l'une des trois catégories : TINY, SMALL ou LARGE. La taille demandée
+		est préalablement alignée sur un multiple de 16 octets afin
+		de respecter les contraintes d'alignement mémoire.
+	</p>
+	<p>
+		Une fois la catégorie déterminée, la fonction mmap
+		permet de réserver une zone de mémoire auprès du système
+		d'exploitation. Pour les catégories TINY et SMALL,
+		cette zone est dimensionnée pour accueillir au minimum 100 allocations
+		de la taille maximale autorisée dans la catégorie.
+		Les allocations LARGE, quant à elles, ont un mmap complet
+		pour chacune d'entre elles avec une taille alignée sur 4096.
+	</p>
+	<p>
+		Enfin, des listes chaînées permettent de suivre les zones
+		mémoire réservées et de gérer les blocs disponibles à
+		l'intérieur de celles-ci. Cette organisation facilite
+		l'attribution des blocs lors des allocations, ainsi que leur
+		récupération lors des appels à free.
+	</p>
+
+<img src="assets/malloc_schema.png" alt="bloc_handler_schema" height="650px" width="750px">
+
+	<h3>Conclusion</h3>
+	<p>
+		J’ai beaucoup apprécié ce projet, car il m’a permis d’en apprendre davantage sur la manipulation des adresses mémoire et sur la gestion des allocations dynamiques. L’utilisation de la fonction mmap, ainsi que la gestion des différents cas liés aux fonctions malloc, free et realloc, ont été particulièrement intéressantes et m’ont permis de mieux comprendre le fonctionnement de la mémoire.<br>
+
+		Ce projet m’a également permis de renforcer mes connaissances en langage C et de mieux comprendre les mécanismes qui se cachent derrière la gestion de la mémoire dynamique.
+	</p>
