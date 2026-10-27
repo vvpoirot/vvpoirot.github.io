@@ -1,6 +1,8 @@
 async function fetchOncePage(idToShow) {
     let targetSection = document.getElementById(idToShow);
 
+	document.querySelector('.sidebar').classList.remove('open');
+
     if (!targetSection) {
         targetSection = document.createElement('div');
         targetSection.id = idToShow;				// Set div id

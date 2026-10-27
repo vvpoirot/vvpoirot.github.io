@@ -106,6 +106,13 @@ body {
     border: 2px solid #111; /* petit contour */
 }
 
+@media (max-width: 768px) {
+    .main-content img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
 @media (min-width: 768px) {
     .skill-grid {
         display: flex;
